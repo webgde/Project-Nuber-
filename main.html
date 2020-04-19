@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <title>Title</title>
+    <style>
+        .navbar-expand-lg .navbar-toggler {
+            display: contents;
+        }
+        
+        .btn {
+            box-shadow: none;
+        }
+        
+        .actived {
+            color: chartreuse;
+        }
+        
+        .sidenav {
+            display: none;
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #f8f9fa;
+            overflow-x: hidden;
+            padding-top: 60px;
+            margin-top: 40px;
+        }
+        
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #343a40;
+            display: block;
+        }
+        
+        .sidenav b {
+            padding: 8px 8px 8px 32px;
+            font-size: 15px;
+        }
+        
+        .sidenav a:hover {
+            color: #a1a1a1;
+        }
+        
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+        
+        .nav-container {
+            color: black;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            border-bottom: 1px solid #343a40;
+        }
+
+        #firser {
+            margin-top: 10px;
+        }
+        
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <button class="navbar-toggler" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation" onclick="openNav()">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- <div id="my-nav" class="navbar-collapse"> -->
+        <div class="justify-content-center mx-auto d-inline-flex">
+            <!-- <button class="btn btn-light" disabled>
+                    <i data-feather="smartphone"></i>
+                </button>
+                <button class="btn btn-light actived">
+                    <i data-feather="monitor"></i>
+                </button>
+                <button class="btn btn-light" disabled>
+                    <i data-feather="tablet"></i>
+                </button> -->
+
+            <div class="bg-light mx-3" id="phone">
+                <i data-feather="smartphone"></i>
+            </div>
+            <div class="bg-light mx-3" id="computer">
+                <i data-feather="monitor"></i>
+            </div>
+            <div class="bg-light mx-3" id="pad">
+                <i data-feather="tablet"></i>
+            </div>
+        </div>
+        </div>
+    </nav>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn d-inline-flex" style="padding-top: 30px;" onclick="closeNav()">
+            <i data-feather="x"></i>
+            <p style="font-size: 11pt;" class="ml-1">Close</p>
+        </a>
+        <div class="nav-container" id="firser">
+            <a href="#" id="title-pages"></a>
+            <b id="file-pages"></b>
+            <br>
+        </div>
+        <div class="nav-container">
+            <a href="#" id="title-sites"></a>
+            <b id="name-sites"></b>
+            <br>
+        </div>
+        <div class="nav-container">
+            <a href="#" id="name1"></a>
+        </div>
+        <div class="nav-container">
+            <a href="#" id="name2"></a>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        // Text
+
+        $('#title-pages').text('Pages')
+        $('#file-pages').text('index.html')
+        $('#title-sites').text('Sites')
+        $('#name-sites').text('New Site')
+        $('#name1').text('Please, Sign Up')
+        $('#name2').text('Extensions')
+
+        // Icons
+        feather.replace()
+
+        var smartWidth = window.innerWidth;
+        if (smartWidth >= 1000) {
+            $("#computer").toggleClass('text-primary')
+        } else if (smartWidth > 767 && smartWidth < 1000) {
+            $("#pad").toggleClass('text-primary')
+        } else if (smartWidth < 767) {
+            $("#phone").toggleClass('text-primary')
+        }
+
+        function openNav() {
+            document.getElementById("mySidenav").style.display = "block";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.display = "none";
+        }
+    </script>
+</body>
+
+</html>
